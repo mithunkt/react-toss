@@ -1,5 +1,14 @@
-.App {
+body,
+html,
+.content,
+.toss-container {
+  height: 100%;
+  width: 100%;
+}
+
+.toss-container {
   text-align: center;
+  background: #222;
 }
 
 .App-logo {
@@ -7,11 +16,15 @@
   height: 80px;
 }
 
-.App-header {
+.toss-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
+}
+
+.toss-result {
+  color: #fff;
 }
 
 .App-title {
@@ -23,6 +36,11 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
