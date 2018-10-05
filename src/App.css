@@ -1,3 +1,5 @@
+@import '';
+
 body,
 html,
 .content,
@@ -34,6 +36,29 @@ html,
 .App-intro {
   font-size: large;
 }
+
+.tosser button {
+  height: 70px;
+  width: 70px;
+  border-radius: 70px;
+}
+
+.progressbar {
+  color: green;
+}
+
+.toss-action { 
+  position: relative;
+}
+
+.toss-action button {
+  position: absolute;
+}
+
+.toss-action div[role='progressbar']{
+  position: absolute;
+}
+
 
 @keyframes App-logo-spin {
   from {

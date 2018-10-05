@@ -1,3 +1,5 @@
+import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import * as React from 'react';
 
 export default class Tosser extends React.Component<{}, { result: string }> {
@@ -11,7 +13,10 @@ export default class Tosser extends React.Component<{}, { result: string }> {
         return (
             <div className="tosser">
                 <div className="toss-result">{this.state.result}</div>
-                <button onClick={this.toss}>TOSS</button>
+                <div className="toss-action">
+                    <CircularProgress size={75} style={{ color: '#d409f7' }} />
+                    <Button color="primary" variant="raised" onClick={this.toss}>TOSS</Button>
+                </div>
             </div>
         );
     }
