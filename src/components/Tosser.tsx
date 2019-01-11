@@ -1,30 +1,36 @@
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import * as React from 'react';
 
-export default class Tosser extends React.Component<{}, { result: string }> {
+export default class Tosser extends React.Component<{}, { result: string, reset: boolean, tossing: boolean }> {
     constructor(props: any) {
         super(props);
         this.toss = this.toss.bind(this);
-        this.state = { result: '' };
+        this.state = { result: '', reset: false, tossing: false };
     }
 
     public render() {
         return (
             <div className="tosser">
                 <div className="toss-result">{this.state.result}</div>
-                <div className="toss-action">
-                    <CircularProgress size={75} style={{ color: '#d409f7' }} />
-                    <Button color="primary" variant="raised" onClick={this.toss}>TOSS</Button>
+                <div className={this.state.tossing? "toss-trigger spin" : "toss-trigger"}>
+                    <button onClick={this.toss}>{ this.state.reset? 'RESET': 'TOSS' }</button>
                 </div>
             </div>
         );
     }
 
     public toss() {
-        const random = Math.floor(Math.random() * 500) + 100;
-        this.setState(state => ({
-            result: (random > 250 ? 'Head' : 'Tail')
-        }));
+        if(this.state.reset) {
+            this.setState({ result: '', reset: false, tossing: false})
+        } else {
+            const random = Math.random() >= 0.5;
+            this.setState(state => ({ result: '', reset: false, tossing: true}))
+            setTimeout(() => {
+                this.setState(state => ({
+                    reset: true,
+                    result: (random  ? 'Head' : 'Tail'),
+                    tossing: false
+                }));
+            }, 1000);
+        }
     }
 }

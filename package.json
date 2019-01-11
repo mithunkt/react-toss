@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://mithunkt.github.io/react-toss",
   "dependencies": {
-    "@material-ui/core": "^3.1.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts-ts": "3.1.0"
