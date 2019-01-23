@@ -10,7 +10,7 @@ html,
 
 .toss-container {
   text-align: center;
-  background: #222;
+  background: #eeeeee;
 }
 
 .spin {
@@ -20,9 +20,14 @@ html,
 
 .toss-header {
   background-color: #222;
-  height: 150px;
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+  height: 30px;
   padding: 20px;
   color: white;
+}
+
+.toss-header h1 {
+  margin: 0px;
 }
 
 .toss-result {
@@ -40,9 +45,13 @@ html,
 }
 
 .tosser button {
-  height: 70px;
-  width: 70px;
-  border-radius: 70px;
+  height: 150px;
+  width: 150px;
+  border: 0px;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12);
+  background: #f7d055;
 }
 
 .progressbar {
@@ -51,6 +60,8 @@ html,
 
 .toss-trigger { 
   position: relative;
+  outline: none;
+  margin-top: 100px;
 }
 
 

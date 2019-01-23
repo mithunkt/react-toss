@@ -11,8 +11,8 @@ export default class Tosser extends React.Component<{}, { result: string, reset:
         return (
             <div className="tosser">
                 <div className="toss-result">{this.state.result}</div>
-                <div className={this.state.tossing? "toss-trigger spin" : "toss-trigger"}>
-                    <button onClick={this.toss}>{ this.state.reset? 'RESET': 'TOSS' }</button>
+                <div className="toss-trigger">
+                    <button className={this.state.tossing? "spin" : ""} onClick={this.toss}>{ this.state.reset? 'RESET': 'TOSS' }</button>
                 </div>
             </div>
         );
